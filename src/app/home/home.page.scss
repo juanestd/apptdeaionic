@@ -25,3 +25,52 @@
 #container a {
   text-decoration: none;
 }
+
+ion-button {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+ion-input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+/* Estilos para ion-item */
+ion-item {
+  --background: #313131;
+  --border-radius: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 15px;
+  --padding-bottom: 15px;
+}
+
+/* Estilos para ion-label */
+ion-label {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* Estilos para h1 */
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1 rem;
+}
+
+/* Estilos para p */
+p {
+  font-size: 1 rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
