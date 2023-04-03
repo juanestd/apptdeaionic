@@ -1,26 +1,33 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="medium" align=center >
-    <ion-title>
-      BIENVENIDO
-    </ion-title>
+<ion-header class="ion-padding">
+  <ion-toolbar>
+    <ion-avatar slot="start">
+      <img
+        src="https://img.freepik.com/vector-gratis/deliciosa-comida-rapida-estilo-pop-art_24908-61615.jpg?w=2000"
+        height="35px" width="35px" alt="">
+    </ion-avatar>
+    <h1 class="contenedor-titulo">SAN ANTOJO GOURMET</h1>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
+  <div class="search">
+    <ion-input placeholder="¿Qué quieres comer?"></ion-input>
+    <ion-icon class="icon-buscar" name="search"></ion-icon>
+  </div>
   <ion-fab vertical="botton" horizontal="end" slot="fixed">
-    <ion-fab-button [routerLink]="['/add-post ']">
-       <ion-icon name="add"></ion-icon>
+    <ion-fab-button [routerLink]="['/add-post']">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab> 
+  </ion-fab>
 
   <ion-list lines="none">
-    <ion-item-sliding>
-    <ion-item>
+    <ion-item-sliding *ngFor="let post of posts">
+    <ion-item class="no-padding">
       <ion-label>
 
-        <h2>Titulo</h2>
-        <p>Detalles</p>
+        <h2>{{post.title}}</h2>
+        <p>{{post.details}}</p>
 
       </ion-label>
    </ion-item>
@@ -29,7 +36,7 @@
 
    
     <ion-item-options side="start">
-      <ion-item-option>
+      <ion-item-option [routerLink]="['/edit-page/', post.id]">
         <ion-icon slot="icon-only" name="hammer-outline"></ion-icon>
       </ion-item-option>  
 
@@ -42,7 +49,7 @@
    
 
     <ion-item-options side="end">
-      <ion-item-option color  = "warning">
+      <ion-item-option color="warning" (click)="deletePost(post.id)">
         <ion-icon slot="icon-only" name="trash-bin-outline"></ion-icon>
       </ion-item-option>  
     </ion-item-options>
@@ -50,9 +57,34 @@
     </ion-item-sliding>
   </ion-list>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
 
+  <div>
+    <ion-card>
+      <ion-img 
+        src="https://www.comedera.com/wp-content/uploads/2022/11/papas-fritas-con-queso-cheddar-PG_PFCQCY30320002.jpg"
+        alt=""></ion-img>
+      <ion-card-content>
+        <h1>PAPAS</h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-img 
+        src="https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/LGWVXSGG7JBEDJSAZR5DDQZK64.jpg"
+        alt=""></ion-img>
+      <ion-card-content>
+        <h1 class="contenedor-titulo">HAMBURGUESA</h1>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-img 
+        src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-pizza-on-table-royalty-free-image-995467932-1559051477.jpg?crop=1.00xw:0.754xh;0,0.127xh&resize=1200:*"
+        alt=""></ion-img>
+      <ion-card-content>
+        <h1>PIZZA</h1>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
 </ion-content>

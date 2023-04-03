@@ -74,3 +74,49 @@ p {
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: right;
+}
+
+ion-input {
+  width: 100%;
+  max-width: 400px;
+  height: 36px;
+  border: 1.5px solid #2d2b2b;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 16px;
+  outline: none;
+}
+
+ion-icon {
+  position: left;
+  right: 12;
+  color: #9e7070;
+  font-size: 20px;
+}
+
+/* Estilos para el hover en el icono */
+.search:hover ion-icon {
+  color: #ab2222;
+}
+
+.contenedor-titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333333;
+  margin-bottom: 10px;
+}

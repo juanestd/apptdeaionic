@@ -5,19 +5,31 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-item >
+    <ion-icon slot="start" name="moon"></ion-icon>
+  <ion-button (click)="toggleDarkMode()">Modo Oscuro</ion-button>
+</ion-item>
 <ion-item>
-  <ion-label position="floating">Correo electronico</ion-label>
-  <ion-input type="email"></ion-input>
+  <ion-label position="floating">
+    <ion-icon name="person-circle-outline"></ion-icon> Correo electrónico</ion-label>
+ 
+  <ion-input placeholder="ingrese usuario" minlength="3" 
+  maxlength="256"type="email" required [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item fill="floating">
+  <ion-label position="floating">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+    contraseña
+  </ion-label>
+
+
+<ion-input  placeholder="ingrese contraseña" minlength="3" 
+maxlength="10"type="password" required [(ngModel)]="user.password"></ion-input>
 </ion-item>
 
-<ion-item>
-<ion-label position="floating">Contraseña</ion-label>
-<ion-input type="password"></ion-input>
-</ion-item>
-
-<ion-button class="ion-padding" color="primary">Ingresar</ion-button>
-<ion-button class="ion-padding" color="primary">Registrarse</ion-button>
+<ion-button class="ion-padding" color="primary" (click)="login(user)">Ingresar</ion-button>
+<ion-button class="ion-padding" color="primary" [routerLink]="['/register']">Registrarse</ion-button>
 
 
 </ion-content>
